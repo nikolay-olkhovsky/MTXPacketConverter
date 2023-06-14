@@ -12,8 +12,9 @@ CMTXWriter::CMTXWriter(const char* folder){
 void CMTXWriter::clearFolder() {
 	filesystem::path path;
 	path.assign(folder);
-	if (filesystem::exists(path))
+	if (filesystem::exists(path)) {
 		filesystem::remove_all(path);
+	}
 	filesystem::create_directory(path);
 }
 

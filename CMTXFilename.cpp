@@ -1,6 +1,7 @@
 #include "CMTXFilename.h"
 #include <iomanip>
 #include <string>
+#include <cstring>
 #include <sstream>
 using namespace std;
 
@@ -24,7 +25,7 @@ const char* CMTXFilename::A(const char* folder, bool withPack) {
 	filename += suffixA;
 	filename += extension;
 	if(withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::b(const char* folder, bool withPack) {
@@ -34,7 +35,7 @@ const char* CMTXFilename::b(const char* folder, bool withPack) {
 	filename += suffixb;
 	filename += extension;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::c(const char* folder, bool withPack) {
@@ -44,7 +45,7 @@ const char* CMTXFilename::c(const char* folder, bool withPack) {
 	filename += suffixc;
 	filename += extension;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::lo(const char* folder, bool withPack) {
@@ -54,7 +55,7 @@ const char* CMTXFilename::lo(const char* folder, bool withPack) {
 	filename += suffixlo;
 	filename += extension;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::hi(const char* folder, bool withPack) {
@@ -64,7 +65,7 @@ const char* CMTXFilename::hi(const char* folder, bool withPack) {
 	filename += suffixhi;
 	filename += extension;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::tr(const char* folder, bool withPack) {
@@ -74,7 +75,7 @@ const char* CMTXFilename::tr(const char* folder, bool withPack) {
 	filename += suffixtr;
 	filename += extension;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::lpp(const char* folder, bool withPack) {
@@ -82,11 +83,11 @@ const char* CMTXFilename::lpp(const char* folder, bool withPack) {
 	filename += folder;
 	filename += lpp_filename;
 	if (withPack) filename += pack;
-	return _strdup(filename.c_str());
+	return strdup(filename.c_str());
 }
 
 const char* CMTXFilename::folderName(unsigned number) {
 	stringstream ss;
 	ss << folderPrefix << setw(5) << setfill('0') << number << '/';
-	return _strdup(ss.str().c_str());
+	return strdup(ss.str().c_str());
 }

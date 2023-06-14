@@ -46,11 +46,11 @@ void CProblem::loadModelProblem(unsigned dimensions) {
 	for (var = 0; var < dimensions; var++)
 		b->setValue(var, 200.);
 	b->setValue(var, 100.);
-	var++;
-	while (var < noc) {
-		b->setValue(var, 0.);
-		var++;
-	}
+//	var++;
+//	while (var < noc) {
+//		b->setValue(var, 0.);
+//		var++;
+//	}
 
 	c = new CArray(noc);
 	for (var = 0; var < dimensions; var++)

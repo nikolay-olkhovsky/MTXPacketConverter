@@ -1,5 +1,6 @@
 #pragma once
 #include "CArray.h"
+#include <cmath>
 class CVector : public CArray
 {
 public:

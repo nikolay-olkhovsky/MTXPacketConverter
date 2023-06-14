@@ -26,11 +26,10 @@ int main()
     
     writer = new CMTXPacketWriter(PP_PATH, numberOfProblems);
     point = new CArray(dimensions);
-
+ 
     problem.loadModelProblem(dimensions);
     for (unsigned i = 0; i < dimensions; i++)
         point->setValue(i, 100.);
-
     writer->clearFolder();
     writer->open();
     for (unsigned i = 0; i < numberOfProblems; i++) {
